@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    # before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action :configure_permitted_parameters, if: :devise_controller?
   
   # Redirect after sign in
   def after_sign_in_path_for(resource)
@@ -22,17 +22,17 @@ class ApplicationController < ActionController::Base
 
 
 
-#   protected
+  protected
 
-#   def configure_permitted_parameters
+  def configure_permitted_parameters
     
-#     if resource_class == Company
-#       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :about, :logo])
-#       devise_parameter_sanitizer.permit(:account_update, keys: [:name, :about, :logo])
-#     elsif resource_class == Candidate
-#       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :about, :roll_no])
-#       devise_parameter_sanitizer.permit(:account_update, keys: [:name, :about, :roll_no])
+    if resource_class == Company
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :about, :logo])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :about, :logo])
+    elsif resource_class == User
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name])
 
-#     end
-#   end
+    end
+  end
 end
