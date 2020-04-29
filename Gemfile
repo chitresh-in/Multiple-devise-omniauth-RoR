@@ -5,6 +5,7 @@ ruby '2.6.5'
 
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 gem 'activerecord-session_store'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
