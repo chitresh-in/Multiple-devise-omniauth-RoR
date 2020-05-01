@@ -31,8 +31,8 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
       devise_parameter_sanitizer.permit(:account_update, keys: [:name])
     elsif resource_class == User
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :roll_no])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:email, :name, :roll_no])
 
     end
   end
